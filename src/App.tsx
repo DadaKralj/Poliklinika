@@ -1,20 +1,13 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import Navbar from './components/Navbar'
-import './App.css'
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
-      <div className="poliklinika-box">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </Router>
-  )
+      <Home />
+    </>
+  );
 }
 
-export default App
+export default App;

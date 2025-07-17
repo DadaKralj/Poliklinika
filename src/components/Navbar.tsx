@@ -1,15 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import './Navbar.css';
 
 const Navbar: React.FC = () => {
+  const [language, setLanguage] = useState('sr');
+
+  const t = (sr: string, en: string) => (language === 'sr' ? sr : en);
+
   return (
-    <nav className="bg-white shadow-md fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50">
-      <div className="text-2xl font-bold text-emerald-600">Poliklinika</div>
-      <div className="space-x-6">
-        <Link to="/" className="text-gray-700 hover:text-emerald-600">Početna</Link>
-        <Link to="/usluge" className="text-gray-700 hover:text-emerald-600">Usluge</Link>
-        <Link to="/onama" className="text-gray-700 hover:text-emerald-600">O nama</Link>
-        <Link to="/kontakt" className="text-gray-700 hover:text-emerald-600">Kontakt</Link>
+    <nav className="navbar">
+      <div className="logo">Poliklinika</div>
+      <div className="nav-links">
+        <a href="#pocetna">{t('Početna', 'Home')}</a>
+        <a href="#usluge">{t('Usluge', 'Services')}</a>
+        <a href="#onama">{t('O nama', 'About us')}</a>
+
+        {/* Kontakt kao dugme */}
+        <a href="#kontakt" className="kontakt-dugme">
+          {t('Kontakt', 'Contact')}
+        </a>
+
+        {/* Jezički izbor */}
+        <div className="language-selector">
+          <button
+            onClick={() => setLanguage('sr')}
+            className={language === 'sr' ? 'active' : ''}
+          >
+            SR
+          </button>
+          <span>|</span>
+          <button
+            onClick={() => setLanguage('en')}
+            className={language === 'en' ? 'active' : ''}
+          >
+            EN
+          </button>
+        </div>
       </div>
     </nav>
   );
