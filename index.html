@@ -1,13 +1,24 @@
 <!doctype html>
+<!-- Deklariše da je ovo HTML5 dokument -->
 <html lang="en">
   <head>
+    <!-- Postavlja enkodiranje karaktera na UTF-8 (podržava sve karaktere, uključujući naše ć, č, ž itd.) -->
     <meta charset="UTF-8" />
+    
+    <!-- Postavlja favicon (ikonicu u tabu browsera); ovde koristi ikonicu iz Vite alata -->
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Omogućava responzivni dizajn, tako da sajt lepo izgleda i na telefonima i na desktopu -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Naslov stranice koji se prikazuje u tabu browsera -->
     <title>Vite + React + TS</title>
   </head>
   <body>
+    <!-- Glavni kontejner gde će se React aplikacija prikazati (React renderuje unutar ovog diva) -->
     <div id="root"></div>
+
+    <!-- Učitava glavni TypeScript fajl koji pokreće React aplikaciju; koristi Vite-ov način rada sa modulima -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
