@@ -59,3 +59,26 @@
 .kontakt-dugme:hover {
   background: #047857;
 }
+
+
+.nav-item {
+  text-decoration: none;
+  color: #4b5563; /* siva */
+  margin-right: 20px;
+}
+
+.nav-item:hover {
+  color: #059669; /* emerald zelena */
+}
+
+.kontakt-dugme {
+  background-color: #059669;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.kontakt-dugme:hover {
+  background-color: #047857;
+}

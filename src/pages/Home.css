@@ -74,3 +74,14 @@
   padding: 60px 20px;
   text-align: center;
 }
+
+.ikona-link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ikona-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
