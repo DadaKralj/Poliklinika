@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 import faceImage from '../pictures/face.jpg';
 import protetikaIcon from '../pictures/protetika.png';
@@ -11,33 +12,33 @@ const Home: React.FC = () => {
     <div className="home-wrapper">
       <section id="pocetna" className="hero-section">
         <div className="text-section">
-          <h1>Dobrodošli u Polikliniku</h1>
+          <h1>Stomatološka poliklinika Papić</h1>
           <p>Zakazivanje pregleda, konsultacije i još mnogo toga.</p>
         </div>
         <div className="image-section">
-          <img src={faceImage} alt="Poliklinika" />
+          <img src={faceImage} alt="Stomatološka poliklinika Papić" />
         </div>
       </section>
 
       <section id="usluge" className="glavne-usluge">
         <h2>Glavne usluge</h2>
         <div className="ikone">
-          <div className="ikona">
+          <Link to="/usluge" className="ikona-link">
             <img src={protetikaIcon} alt="Protetika" />
             <p>Protetika</p>
-          </div>
-          <div className="ikona">
+          </Link>
+          <Link to="/usluge" className="ikona-link">
             <img src={hirurgijaIcon} alt="Hirurgija" />
             <p>Hirurgija</p>
-          </div>
-          <div className="ikona">
+          </Link>
+          <Link to="/usluge" className="ikona-link">
             <img src={ortodoncijaIcon} alt="Ortodoncija" />
             <p>Ortodoncija</p>
-          </div>
-          <div className="ikona">
+          </Link>
+          <Link to="/usluge" className="ikona-link">
             <img src={restauracijaIcon} alt="Restauracija" />
             <p>Restaurativna stomatologija</p>
-          </div>
+          </Link>
         </div>
       </section>
 

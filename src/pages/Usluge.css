@@ -1,45 +1,41 @@
-.usluge-container {
-  min-height: 400px;
-  padding: 80px 20px 40px;
-  background-color: #f3f4f6; /* svetlo siva */
+.usluge-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.usluga-button {
+  background-color: #059669;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.usluga-button:hover {
+  background-color: #047857;
+}
+
+.vidi-vise {
   text-align: center;
 }
 
-.usluge-container h2 {
-  font-size: 36px;
+.vidi-vise-dugme {
+  background-color: transparent;
   color: #059669;
-  margin-bottom: 40px;
-}
-
-.usluge-lista {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .usluge-lista {
-    flex-direction: row;
-  }
-}
-
-.usluga {
-  background: white;
-  padding: 20px;
+  border: 2px solid #059669;
+  padding: 10px 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  flex: 1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
 }
 
-.usluga h3 {
-  font-size: 24px;
-  color: #111827;
-  margin-bottom: 10px;
-}
-
-.usluga p {
-  font-size: 16px;
-  color: #4b5563;
+.vidi-vise-dugme:hover {
+  background-color: #059669;
+  color: white;
 }
