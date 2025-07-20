@@ -5,6 +5,7 @@ import protetikaIcon from '../pictures/protetika.png';
 import hirurgijaIcon from '../pictures/protetika.png';
 import ortodoncijaIcon from '../pictures/protetika.png';
 import restauracijaIcon from '../pictures/protetika.png';
+import Klijenti from '../components/Klijenti'; // ✅ Dodato
 
 const Home: React.FC = () => {
   return (
@@ -46,6 +47,8 @@ const Home: React.FC = () => {
         <p>Mi smo moderna poliklinika posvećena vašem zdravlju.</p>
       </section>
 
+      <Klijenti /> {/* ✅ Nova sekcija ubačena između "O nama" i "Kontakt" */}
+
       <section id="kontakt" className="kontakt">
         <h2>Kontakt</h2>
         <p>Adresa: Bulevar Cara Lazara 7a, Novi Sad</p>
@@ -54,7 +57,7 @@ const Home: React.FC = () => {
         <p>Email: office@sp-papic.rs</p>
       </section>
 
-       <div className="mapa">
+      <div className="mapa">
         <iframe
           title="Google mapa"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.4566423437486!2d19.84298421577414!3d45.251706479098915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b106b93d93835%3A0x3c4a4b7e98ab828b!2sBulevar%20Cara%20Lazara%207a%2C%20Novi%20Sad!5e0!3m2!1sen!2srs!4v1624182616699!5m2!1sen!2srs"
