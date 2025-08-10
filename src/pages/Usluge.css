@@ -20,6 +20,11 @@
   background-color: #047857;
 }
 
+.usluge-container {
+  padding-top: 80px; /* ista visina kao navbar */
+}
+
+
 .vidi-vise {
   text-align: center;
 }

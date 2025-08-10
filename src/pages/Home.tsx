@@ -4,8 +4,9 @@ import './Home.css';
 import faceImage from '../pictures/face.jpg';
 import protetikaIcon from '../pictures/protetika.png';
 import hirurgijaIcon from '../pictures/protetika.png';
-import ortodoncijaIcon from '../pictures/protetika.png';
+import ortodoncijaIcon from '../pictures/ortodoncija.jpg';
 import restauracijaIcon from '../pictures/protetika.png';
+import slikaPoliklinike from '../pictures/slikaPoliklinike.jpg';
 
 const Home: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ const Home: React.FC = () => {
       <section id="pocetna" className="hero-section">
         <div className="text-section">
           <h1>Stomatološka poliklinika Papić</h1>
-          <p>Zakazivanje pregleda, konsultacije i još mnogo toga.</p>
+          <p>Kombinujemo najsavremenije metode stomatologije sa pažnjom prema svakom detalju – jer vaš osmeh zaslužuje najbolje.</p>
         </div>
         <div className="image-section">
           <img src={faceImage} alt="Stomatološka poliklinika Papić" />
@@ -32,28 +33,52 @@ const Home: React.FC = () => {
             <p>Hirurgija</p>
           </Link>
           <Link to="/usluge" className="ikona-link">
-            <img src={ortodoncijaIcon} alt="Ortodoncija" />
-            <p>Ortodoncija</p>
+            <div 
+              className="ikona" 
+              style={{ backgroundImage: `url(${ortodoncijaIcon})` }}
+            >
+              <p>Ortodoncija</p>
+            </div>
           </Link>
           <Link to="/usluge" className="ikona-link">
             <img src={restauracijaIcon} alt="Restauracija" />
             <p>Restaurativna stomatologija</p>
           </Link>
         </div>
+        
+        <div className="sve-usluge-btn-wrapper">
+          <Link to="/usluge" className="sve-usluge-btn">
+            Pogledajte sve usluge
+          </Link> 
+        </div>
       </section>
 
       <section id="onama" className="onama">
         <h2>O nama</h2>
-        <p>Mi smo moderna poliklinika posvećena vašem zdravlju.</p>
+        <div className="onama-content">
+          <div className="onama-text">
+            <h3>OSNIVANJE</h3>
+            <p>Stomatološka Poliklinika Papić je osnovana 1992. godine kao prva privatna stomatološka poliklinika u Novom Sadu.</p>
+            <p>Posle 27 godina uspešnog rada, sa puno elana dočekujemo nove izazove, značajno ojačani kadrovski, organizaciono i tehnički.</p>
+            <p>Najvećim uspehom smatramo preko 100.000 uspešno saniranih i zadovoljnih pacijenata, bez i jednog spora i bez i jednog negativnog nalaza ili primedbe na rad Poliklinike od inspekcijskih nadzora. Želimo da naglasimo da nije bilo ni jedne primedbe inostranih komisija na radove rađene za osiguranike u inostranstvu.</p>
+            <p>Stomatologija ide krupnim korakom napred. Da bi pratili struku i nauku i nastavili da radimo uspešno i u narednom periodu, napravili smo sve potrebne kadrovske i organizacione promene u cilju poboljšanja i proširenja usluga.</p>
+            <h3>LOKACIJA I PROSTOR</h3>
+            <p>Poliklinika se nalazi na atraktivnoj lokaciji, u sopstvenom poslovnom prostoru površine 200m2, namenski građenom za zdravstvenu ustanovu i opremljenom po najvišim standardima.</p>
+          </div>
+          <div className="onama-image">
+            <img src={slikaPoliklinike} alt="Poliklinika Papić" />
+          </div>
+        </div>
       </section>
 
       <section id="kontakt" className="kontakt">
         <h2>Kontakt</h2>
-        <p>Adresa: Bulevar Cara Lazara 7a, Novi Sad</p>
-        <p>Telefon: +381 21 6350 388</p>
-        <p>Mobilni: +381 65 3350 388</p>
-        <p>Email: office@sp-papic.rs</p>
+        <div className="kontakt-item">📍 Bulevar Cara Lazara 7a, Novi Sad</div>
+        <div className="kontakt-item">☎️ +381 21 6350 388</div>
+        <div className="kontakt-item">📱 +381 65 3350 388</div>
+        <div className="kontakt-item">✉️ office@sp-papic.rs</div>
       </section>
+
 
        <div className="mapa">
         <iframe
