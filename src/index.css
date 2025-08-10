@@ -2,3 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #374151;  /* tamno siva za bolju čitljivost */
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; /* Bold za naslove */
+  color: #111827;   /* Malo tamnija boja za kontrast */
+  margin-bottom: 16px;
+  line-height: 1.3; /* Povećan razmak između linija za bolje čitanje */
+}
+
+p {
+  font-weight: 400; /* Regular tekst */
+  margin-bottom: 14px;
+  line-height: 1.7; /* Povećan razmak između linija za bolju čitljivost */
+}
+
+a {
+  font-weight: 500; /* Linkovi srednje bold */
+  text-decoration: none;
+  color: #059669; /* Emerald zelena */
+}
+
+a:hover {
+  color: #047857; /* Tamnija nijansa na hover */
+}
+
+button, .sve-usluge-btn, .kontakt-dugme, .usluga-button {
+  transition: all 0.3s ease; /* smooth efekti */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* lagani default shadow */
+}
+
+button:hover, .sve-usluge-btn:hover, .kontakt-dugme:hover, .usluga-button:hover {
+  transform: translateY(-2px); /* blago podizanje dugmeta na hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* jači shadow na hover */
+}
+
+section {
+  padding: 60px 20px;
+  margin-bottom: 40px; /* prostor između sekcija */
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 40px 15px; /* manji padding za mobilne */
+    margin-bottom: 30px;
+  }
+}
+

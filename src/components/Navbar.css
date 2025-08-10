@@ -83,6 +83,7 @@
   background-color: #047857;
 }
 
+
 .burger {
   display: none;
   flex-direction: column;
@@ -123,3 +124,9 @@
   }
 }
 
+#pocetna,
+#usluge,
+#onama,
+#kontakt {
+  scroll-margin-top: 70px;
+}
