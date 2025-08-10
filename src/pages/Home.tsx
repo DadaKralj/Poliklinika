@@ -71,7 +71,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <Klijenti /> {/* ✅ Nova sekcija ubačena između "O nama" i "Kontakt" */}
+
+
 
       <section id="kontakt" className="kontakt">
         <h2>Kontakt</h2>
