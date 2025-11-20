@@ -1,0 +1,209 @@
+/* ===== Footer (Kontakt) ===== */
+
+.kontakt-footer {
+  background: #f6fbfa;
+  padding: 64px 20px;
+  border-radius: 20px;
+}
+
+.kontakt-top {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.2fr auto; /* brand | nav | lokacija | CTA */
+  gap: 32px;
+  align-items: start;
+}
+
+.kf-col h3 {
+  letter-spacing: 0.5px;
+  font-weight: 800;
+  font-size: 14px;
+  color: #0f766e; /* teal nijansa */
+  margin: 0 0 12px;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0e7490;
+  margin-bottom: 16px;
+}
+
+/* Social */
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #1f2937;
+  text-decoration: none;
+}
+
+.circle-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #6ee7e7; /* svetli teal obrub */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #0e7490;
+}
+
+/* Nav lista */
+.kf-col.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kf-col.nav a {
+  text-decoration: none;
+  color: #1f2937;
+}
+
+.kf-col.nav a:hover {
+  color: #0e7490;
+}
+
+/* Lokacija */
+.kf-col.lokacija address {
+  font-style: normal;
+  color: #111827;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.info-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.info-row .label {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.info-row .value {
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* CTA dugme */
+.cta-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #248ec7; /* teal */
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(79, 182, 174, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cta:hover {
+  background: #409f98;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(79, 182, 174, 0.35);
+}
+
+.cta-icon {
+  font-size: 18px;
+}
+
+/* Divider i bottom bar */
+.divider {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin: 36px 0 24px;
+}
+
+.kontakt-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.kontakt-bottom .left {
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #0e7490;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.to-top-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #6ee7e7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .kontakt-top {
+    grid-template-columns: 1.2fr 1fr 1fr; /* CTA ispod */
+  }
+  .cta-wrap {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .kontakt-top {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .brand-title {
+    text-align: center;
+  }
+  .social {
+    align-self: center;
+  }
+  .kf-col.nav ul,
+  .kf-col.lokacija {
+    align-items: flex-start;
+  }
+  .cta-wrap {
+    justify-content: center;
+  }
+  .kontakt-footer {
+    border-radius: 14px;
+  }
+}

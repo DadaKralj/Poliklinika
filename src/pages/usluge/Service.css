@@ -1,0 +1,81 @@
+/* src/pages/usluge/Service.css */
+/* Ovaj fajl koristi se SAMO za sekciju "Glavne usluge" (preview ikone na početnoj) */
+
+/* ========== Preview sekcija glavnih usluga ========== */
+.glavne-usluge {
+  background: #f9fafb;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.glavne-usluge h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* Kontejner za sve ikone/usluge */
+.ikone {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+/* Pojedinačna kartica (slika sa tekstom) */
+.ikona {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 15px;
+}
+
+/* Overlay preko slike radi čitljivosti teksta */
+.ikona::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
+  z-index: 1;
+}
+
+/* Tekst unutar ikonice */
+.ikona p {
+  position: relative;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  z-index: 2;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* (Retko korišćeno – fallback za <img> unutar .ikona ako se koristi) */
+.ikona img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+/* Link oko svake ikonice */
+.ikona-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ikona-link:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}

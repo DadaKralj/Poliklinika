@@ -1,0 +1,66 @@
+.stat-section {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.stat-circle {
+  --size: 240px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  /* statična plava pozadina (bez talasa) */
+  background: linear-gradient(180deg, #2b9bd6, #0f6fb0);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.stat-inner {
+  text-align: center;
+  z-index: 1;
+}
+
+.stat-number {
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.stat-label {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
+/* === Responsive === */
+@media (max-width: 1000px) {
+  .stat-section { gap: 40px; margin-top: 60px; margin-bottom: 60px; }
+  .stat-circle { --size: 200px; width: var(--size); height: var(--size); }
+  .stat-number { font-size: 32px; }
+  .stat-label { font-size: 16px; }
+}
+
+@media (max-width: 600px) {
+  .stat-section {
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+    padding: 0 12px;
+  }
+  .stat-circle { --size: 140px; width: var(--size); height: var(--size); }
+  .stat-number { font-size: 22px; }
+  .stat-label { font-size: 14px; }
+}
+
+
+

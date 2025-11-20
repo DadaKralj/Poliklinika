@@ -1,0 +1,93 @@
+/* src/pages/Tim/Tim.css */
+
+.tim-stranica {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 20px;
+}
+
+.tim-header {
+  background-color: #1772a3; /* Plava pozadina */
+  padding: 120px 20px 120px; 
+  text-align: center;
+  color: #ffffff; /* Belo za ceo tekst */
+  width: 100vw;            /* Širina preko celog ekrana */
+  margin-left: calc(-50vw + 50%); /* Izlazak iz kontejnera ako je u centriranom wrapperu */
+  position: relative;      /* Omogućava slojeve iznad ako bude trebalo */
+  /* Dodato za centriranje */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px; /* Povećaj po potrebi ako želiš više vertikalnog prostora */
+}
+
+.tim-header h1 {
+  font-size: clamp(40px, 5vw, 48px); /* Veći, responzivni naslov */
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: #ffffff; /* Osigurava da je tekst beo */
+}
+
+.tim-header p {
+  font-size: 26px;
+  color: #e6f1f6; /* Svetlija nijansa plave/bela za podnaslov */
+  margin: 0;
+}
+
+
+/* Grid raspored */
+.tim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  margin-top: -70px;
+}
+
+/* Kartica */
+.tim-kartica {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tim-kartica:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.62);
+}
+
+.tim-kartica img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 3 / 4;
+}
+
+/* Tekst */
+.tim-tekst {
+  padding: 20px 16px 28px;
+  text-align: center;
+}
+
+.tim-tekst h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  color: #1e3a8a;
+}
+
+.tim-tekst h4 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #64748b;
+}
+
+.tim-tekst p {
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.5;
+}

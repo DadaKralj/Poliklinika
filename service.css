@@ -1,0 +1,118 @@
+// Glavna sekcija za usluge - postavlja fleksibilni raspored i centrira sadržaj
+.services {
+  display: flex; // Omogućava fleksibilan raspored elemenata u redu
+  flex-direction: column; // Slaže elemente jedan ispod drugog
+  align-items: center; // Centrira sve elemente horizontalno
+  justify-content: center; // Centrira sve elemente vertikalno
+  gap: 3rem; // Razmak između glavnih elemenata (3rem = ~48px)
+  padding: 2rem 1rem; // Unutrašnji prostor: gornje/donje (2rem), levo/desno (1rem)
+}
+
+// Naslov sekcije - stilizacija glavnog naslova "Usluge"
+.services-title {
+  font-size: 2.5rem; // Veličina teksta - veoma veliki naslov
+  font-weight: 700; // Teža težina fonta - masivniji izgled
+  color: #000; // Crna boja teksta
+  text-align: center; // Tekst je centriran
+  margin-bottom: 2rem; // Razmak ispod naslova
+}
+
+// Kontejner koji sadrži sve kartice sa uslugama
+.services-container {
+  display: grid; // Koristi CSS Grid za raspored
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Automatski breja kolona sa minimalnom širinom od 280px
+  gap: 2rem; // Razmak između kartice: 2rem (~32px)
+  width: 100%; // Zauzima celu dostupnu širinu
+  max-width: 1200px; // Maksimalna širina - sprečava da bude previše šira
+  margin: 0 auto; // Centrira kontejner horizontalno
+}
+
+// Individualna kartica za svaku uslugu
+.service-card {
+  background-color: #f5f5f5; // Svetlo siva boja pozadine
+  border-radius: 12px; // Zaobljeni uglovi - 12px radijus
+  padding: 2rem; // Unutrašnji prostor sa svih strana
+  text-align: center; // Tekst je centriran
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Sjena kartice: 4px zamučenost, 0.1 opacitet
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Glatka animacija pri hover efektu (0.3s)
+  cursor: pointer; // Pokazivač menja na ruku kada je učitavanje
+}
+
+// Hover efekat - šta se desi kada korisnik prođe mišem preko kartice
+.service-card:hover {
+  transform: translateY(-10px); // Kartice se diže za 10px gore (3D efekat)
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); // Senja se pojačava za bolji efekat
+}
+
+// Ikona unutar kartice - mali simbol ili slika
+.service-icon {
+  font-size: 3rem; // Veličina ikone - veoma velika
+  margin-bottom: 1rem; // Razmak ispod ikone
+  color: #007bff; // Plava boja ikone
+}
+
+// Naslov svake pojedinačne kartice
+.service-name {
+  font-size: 1.3rem; // Srednje velika veličina teksta
+  font-weight: 600; // Poludeblji font
+  color: #333; // Tamno siva boja teksta
+  margin-bottom: 0.8rem; // Razmak ispod naslova kartice
+}
+
+// Opis usluge - detaljan tekst ispod naslova
+.service-description {
+  font-size: 0.95rem; // Malo manja veličina teksta
+  color: #666; // Srednje siva boja (malo tamnija od svetle)
+  line-height: 1.6; // Razmak između redova - bolja čitljivost
+  margin-bottom: 1rem; // Razmak ispod teksta opisa
+}
+
+// Dugme ili link za više informacija
+.service-link {
+  display: inline-block; // Prikazuje kao inline element sa mogućnošću postavljanja width/height
+  padding: 0.6rem 1.2rem; // Unutrašnji prostor: 0.6rem gornje/donje, 1.2rem levo/desno
+  background-color: #007bff; // Plava boja dugmeta
+  color: white; // Bela boja teksta
+  text-decoration: none; // Uklanja underline sa linka
+  border-radius: 6px; // Zaobljeni uglovi dugmeta
+  font-size: 0.9rem; // Manja veličina teksta
+  transition: background-color 0.3s ease; // Glatka promena boje pri hover efektu
+}
+
+// Hover efekat za dugme - šta se desi kada korisnik prođe mišem
+.service-link:hover {
+  background-color: #0056b3; // Tamnija plava boja pri hover efektu
+}
+
+// Sekcija sa posebnim uslugama ili zarezima
+.featured-services {
+  background-color: #e8f4f8; // Svetlo plava pozadina
+  padding: 3rem 1rem; // Veliki unutrašnji prostor
+  border-radius: 12px; // Zaobljeni uglovi
+  margin-top: 2rem; // Razmak iznad sekcije
+  width: 100%; // Zauzima celu dostupnu širinu
+}
+
+// Naslov za istaknute usluge
+.featured-title {
+  font-size: 1.8rem; // Veća veličina teksta
+  font-weight: 600; // Poludeblji font
+  color: #005a87; // Tamnija plava boja
+  margin-bottom: 1.5rem; // Razmak ispod naslova
+  text-align: center; // Tekst je centriran
+}
+
+// Kontejner za listu istaknutih usluga
+.featured-list {
+  display: flex; // Fleksibilan raspored
+  flex-direction: column; // Elementi jedan ispod drugog
+  gap: 1rem; // Razmak između stavki liste
+}
+
+// Individualna stavka u listi
+.featured-item {
+  padding: 1rem; // Unutrašnji prostor
+  background-color: white; // Bela pozadina
+  border-left: 4px solid #007bff; // Plava linija sa leve strane (accent)
+  border-radius: 4px; // Malo zaobljeni uglovi
+}

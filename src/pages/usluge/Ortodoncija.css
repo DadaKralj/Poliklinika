@@ -1,0 +1,136 @@
+.orto-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px 60px;
+  box-sizing: border-box;
+}
+
+/* === HERO BLOK === */
+
+.orto-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 28px;
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 28px 24px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 28px;
+  align-items: center;
+}
+
+.orto-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.orto-hero-text h1 {
+  margin: 6px 0 10px;
+  font-size: clamp(24px, 4vw, 34px);
+  color: #0f172a;
+}
+
+.orto-hero-text p {
+  margin: 0 0 10px;
+  color: #475569;
+  font-size: 0.98rem;
+}
+
+/* === LISTA – custom bullet tačke ==== */
+
+.orto-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.orto-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+}
+
+.orto-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #059669;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.orto-list-wrapper h2 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* === SLIKA ==== */
+
+.orto-hero-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+  display: block;
+  object-fit: cover;
+}
+
+/* === GRID ISPOD HEROA ==== */
+
+.orto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.orto-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.orto-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.orto-card p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.orto-card-accent {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+}
+
+/* === RESPONSIVE ==== */
+
+@media (max-width: 768px) {
+  .orto-page {
+    padding-top: 72px;
+  }
+
+  .orto-hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 22px 18px;
+  }
+
+  .orto-hero-image {
+    order: -1;
+  }
+}

@@ -3,13 +3,18 @@ import { HashLink } from 'react-router-hash-link';
 import React, { useState } from 'react';
 import './Navbar.css';
 
+// ⬇️ Uvozimo globalni language context
+import { useLanguage } from "../Context/LanguageContext";
+
 const Navbar: React.FC = () => {
-  const [language, setLanguage] = useState('sr');
-  const [menuOpen, setMenuOpen] = useState(false); // Dodato za burger
+  // ⬇️ Više NEMA lokalnog language state-a
+  const { language, setLanguage } = useLanguage();
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // ⬇️ Funkcija za prevođenje
   const t = (sr: string, en: string) => (language === 'sr' ? sr : en);
-
-  const closeMenu = () => setMenuOpen(false); // Da zatvori meni kad klikneš na link
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <nav className="navbar">
@@ -26,17 +31,24 @@ const Navbar: React.FC = () => {
         <HashLink smooth to="/#pocetna" className="nav-item" onClick={closeMenu}>
           {t('Početna', 'Home')}
         </HashLink>
+
+        <HashLink smooth to="/#onama" className="nav-item" onClick={closeMenu}>
+          {t('O nama', 'About us')}
+        </HashLink>
+
         <HashLink smooth to="/#usluge" className="nav-item" onClick={closeMenu}>
           {t('Usluge', 'Services')}
         </HashLink>
-        <HashLink smooth to="/#onama" className="nav-item" onClick={closeMenu}>
-          {t('O nama', 'About us')}
+
+        <HashLink smooth to="/#galerija" className="nav-item" onClick={closeMenu}>
+          {t('Galerija', 'Gallery')}
         </HashLink>
 
         <HashLink smooth to="/#kontakt" className="kontakt-dugme" onClick={closeMenu}>
           {t('Kontakt', 'Contact')}
         </HashLink>
 
+        {/* Selektor jezika — sada globalni */}
         <div className="language-selector">
           <button
             onClick={() => setLanguage('sr')}

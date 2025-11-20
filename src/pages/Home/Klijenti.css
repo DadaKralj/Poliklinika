@@ -1,0 +1,295 @@
+:root {
+  --card-gap: 32px;
+  --card-radius: 28px;
+  --card-padding-vertical: 48px;
+  --card-padding-horizontal: 64px;
+  --brand-teal: #1aa7a1;
+  --text-muted: #777777;
+  --cards-visible: 2;
+}
+
+.klijenti {
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.klijenti::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.48);
+  z-index: 0;
+  backdrop-filter: blur(2px);
+}
+
+.klijenti > * {
+  position: relative;
+  z-index: 1;
+}
+
+.klijenti .subtitle {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: clamp(12px, 1.2vw, 14px);
+  margin-bottom: 8px;
+}
+
+.klijenti h2 {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto 32px;
+  text-align: left;
+  color: #ffffff;
+  font-size: clamp(24px, 3.6vw, 44px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.6px;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.arrow {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  border-radius: 50%;
+  background-color: var(--brand-teal);
+  color: white;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(26, 167, 161, 0.18);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  flex-shrink: 0;
+}
+
+.carousel .arrow {
+  margin: 0 -28px;
+  align-self: center;
+}
+
+.arrow:hover:not(:disabled) {
+  transform: scale(1.06);
+  box-shadow: 0 10px 30px rgba(26, 167, 161, 0.25);
+}
+
+.arrow:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.arrow:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.klijenti .carousel-viewport {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.klijenti .carousel-track {
+  display: flex;
+  align-items: stretch;
+  will-change: transform;
+  box-sizing: border-box;
+}
+
+.klijenti .klijent-kartica {
+  flex: 0 0 calc((100% - var(--card-gap)) / var(--cards-visible));
+  margin-right: var(--card-gap);
+  background: #ffffff;
+  padding: var(--card-padding-vertical) var(--card-padding-horizontal);
+  border-radius: var(--card-radius);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.klijenti .klijent-kartica:last-child {
+  margin-right: 0;
+}
+
+.klijent-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(26, 167, 161, 0.12), rgba(26, 167, 161, 0.06));
+  margin-bottom: 18px;
+  box-shadow: 0 6px 18px rgba(26, 167, 161, 0.06);
+  flex-shrink: 0;
+}
+
+.ime {
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+.zvezdice {
+  color: var(--brand-teal);
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 1;
+  letter-spacing: 2px;
+  flex-shrink: 0;
+}
+
+.tekst {
+  color: var(--text-muted);
+  font-size: clamp(14px, 1.4vw, 16px);
+  line-height: 1.7;
+  max-width: 44ch;
+  margin: 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    will-change: auto;
+  }
+  .arrow {
+    transition: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --card-padding-horizontal: 40px;
+    --card-padding-vertical: 36px;
+    --card-gap: 24px;
+  }
+  .klijenti h2 {
+    font-size: clamp(22px, 4vw, 34px);
+  }
+  .klijent-icon {
+    width: 68px;
+    height: 68px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --card-padding-horizontal: 28px;
+    --card-padding-vertical: 28px;
+    --card-gap: 16px;
+    --cards-visible: 1;
+  }
+
+  .klijenti {
+    padding: 48px 16px;
+  }
+
+  .klijenti .subtitle,
+  .klijenti h2 {
+    text-align: center;
+    width: auto;
+  }
+
+  .klijenti .klijent-kartica {
+    padding: 36px 24px;
+    border-radius: 22px;
+    min-height: 340px;
+  }
+
+  .carousel {
+    padding: 0;
+  }
+
+  .carousel .arrow {
+    margin: 0 -12px;
+  }
+
+  .klijent-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --card-padding-horizontal: 20px;
+    --card-padding-vertical: 24px;
+  }
+
+  .klijenti {
+    padding: 36px 12px;
+  }
+
+  .klijenti h2 {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
+  .klijenti .subtitle {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .carousel .arrow {
+    margin: 0 -8px;
+  }
+
+  .klijent-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .ime {
+    font-size: 16px;
+  }
+
+  .zvezdice {
+    font-size: 16px;
+  }
+}

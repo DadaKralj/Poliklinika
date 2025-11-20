@@ -11,14 +11,6 @@ section {
   margin-bottom: 60px; /* Razmak između sekcija, ??? za sad nek stoji */
 }
 
-.hero-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-}
-
 .text-section {
   flex: 1;
   min-width: 300px;
@@ -46,169 +38,8 @@ section {
   border-radius: 16px;
 }
 
-.glavne-usluge {
-  background: #f9fafb;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.ikone {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-/*
-.ikona {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  width: 200px;
-}
-*/
-
-.ikona {
-  background-size: cover;
-  background-position: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  width: 200px;
-  height: 200px;
-  display: flex;
-  align-items: flex-end; /* Pomera tekst ka dnu */
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 15px; /* Malo razmaka od donje ivice */
-}
-
-.ikona::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-}
-
-.ikona p {
-  position: relative;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  z-index: 2;
-}
-
-.ikona img {
-  width: 80px;
-  margin-bottom: 10px;
-}
-
-/*O nama */
-
-.onama-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.onama-text {
-  flex: 1 1 400px;
-  max-width: 600px;
-}
-
-.onama h2 {
-  text-align: center;
-  font-size: 18px; 
-  font-weight: 700;
-  color: #111827; 
-  margin-bottom: 30px;
-}
-
-
-.onama-text h3 {
-  color: #059669;
-  margin-top: 20px;
-  margin-bottom: 8px;
-}
-
-.onama-text p {
-  margin-bottom: 12px;
-  line-height: 1.5;
-  color: #4b5563;
-  font-size: 16px;
-}
-
-.onama-image {
-  flex: 1 1 300px;
-  max-width: 400px;
-  display: flex;
-  justify-content: center;
-}
-
-.onama-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-
-/*kontakt */
-
-.kontakt {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.kontakt-item {
-  font-size: 18px;
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-
-
-.ikona-link {
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.ikona-link:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.sve-usluge-btn-wrapper {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.sve-usluge-btn {
-  background-color: #059669;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 18px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.sve-usluge-btn:hover {
-  background-color: #047857;
-  color: white; 
-}
 
 /* Responsive dizajn */
-
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column; /* Slika ide ispod teksta */
@@ -226,27 +57,8 @@ section {
   .image-section img {
     max-width: 90%; /* Manja slika na telefonu */
   }
-
-  .ikone {
-    flex-direction: column; /* Usluge idu jedna ispod druge */
-  }
-
-  .ikona {
-    width: 80%;  /* Širina kartice usluge na telefonu */
-    height: 180px;
-  }
-
-  .onama-content {
-    flex-direction: column; /* Tekst i slika jedna ispod druge */
-    text-align: center;
-  }
-
-  .onama-image {
-    max-width: 90%;
-  }
 }
 
 body {
   overflow-x: hidden; /* Sprečava horizontalno skrolovanje */
 }
-

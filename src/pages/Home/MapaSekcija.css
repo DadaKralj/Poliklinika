@@ -1,0 +1,67 @@
+/* src/pages/Home/MapaSekcija.css */
+
+/* Glavni kontejner za mapu */
+.mapa {
+  width: 100%;
+  max-width: 1200px;         /* poravnato sa home-wrapper */
+  margin: 60px auto;         /* centriranje + vertikalni razmak */
+  border-radius: 16px;       /* mekane ivice */
+  overflow: hidden;          /* da se iframe lepo iseče u radius */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+  border: 1px solid #e5e7eb; /* diskretan okvir */
+  background: #f8fafc;       /* suptilna pozadina dok se iframe učita */
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+/* Hover “lift” efekt (opciono) */
+.mapa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, .16);
+}
+
+/* Iframe zauzima ceo kontejner */
+.mapa iframe {
+  display: block;
+  width: 100%;
+  height: 420px;             /* desktop visina */
+  border: 0;
+}
+
+/* Sitna legenda / pomoćni tekst ispod mape (opciono) */
+.mapa .mapa-note {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #6b7280;
+  background: #ffffff;
+  border-top: 1px solid #eef2f7;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mapa iframe { height: 380px; }
+}
+@media (max-width: 768px) {
+  .mapa { margin: 40px 16px; border-radius: 12px; }
+  .mapa iframe { height: 320px; }
+}
+@media (max-width: 480px) {
+  .mapa iframe { height: 280px; }
+}
+
+/* (OPCIONO) Full-bleed varijanta preko cele širine ekrana:
+   dodaj klasu .mapa--fullBleed na div ako želiš ovaj stil. */
+.mapa--fullBleed {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-left: 0;
+  border-right: 0;
+}
+
+
+
+
+
+
