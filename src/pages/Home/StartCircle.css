@@ -41,14 +41,7 @@
 }
 
 /* === Responsive === */
-@media (max-width: 1000px) {
-  .stat-section { gap: 40px; margin-top: 60px; margin-bottom: 60px; }
-  .stat-circle { --size: 200px; width: var(--size); height: var(--size); }
-  .stat-number { font-size: 32px; }
-  .stat-label { font-size: 16px; }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .stat-section {
     flex-direction: column;
     gap: 22px;

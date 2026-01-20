@@ -1,110 +1,188 @@
 /* === GLAVNI KONTEJNER STRANICE === */
 .protetika-page {
-  max-width: 1100px;          /* Ograničava širinu stranice radi bolje čitljivosti */
-  margin: 0 auto;             /* Centriranje stranice u okviru ekrana */
-  padding: 80px 20px;         /* Unutrašnji razmak – gornji/donji 80px, levo/desno 20px */
-  box-sizing: border-box;     /* Padding se uračunava u ukupnu širinu */
-  /* Ako želiš da smanjiš "visinu" praznog prostora na stranici, smanji padding: npr. 60px 20px */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px 20px;
+  box-sizing: border-box;
 }
 
-/* === HERO SEKTOR (naslov + uvodni tekst) === */
+/* === HERO SEKTOR === */
+
 .protetika-hero {
-  background: #f9fafb;                   /* Svetla pozadina hero sekcije */
-  border: 1px solid #e5e7eb;             /* Svetla siva linija oko bloka */
-  border-radius: 16px;                   /* Zaobljeni uglovi */
-  padding: 28px 24px;                    /* Unutrašnji razmak unutar bloka */
-  margin-bottom: 28px;                   /* Razmak ispod hero sekcije (pre sledeće sekcije) */
-  box-shadow: 0 6px 18px rgba(0, 0, 2, 0.48);  /* Senka ispod bloka */
-  text-align: left;                      /* Poravnanje teksta levo */
-  /* Ako želiš da ovaj blok bude bliži sledećem, smanji margin-bottom (npr. 20px) */
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 28px;
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 28px 24px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 6px;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-.protetika-hero h1 {
-  margin: 0 0 6px;                       /* Donji razmak ispod naslova */
-  font-size: clamp(24px, 4vw, 36px);     /* Responsive font: min 24px, max 36px */
-  color: #0f172a;                        /* Tamna boja naslova */
+.protetika-hero-text h1 {
+  margin: 6px 0 10px;
+  font-size: clamp(24px, 4vw, 34px);
+  color: #0f172a;
 }
 
-.protetika-hero p {
-  margin: 0;                             /* Bez dodatnog razmaka ispod */
-  color: #475569;                        /* Siva nijansa za tekst */
-  line-height: 1.6;                      /* Razmak između redova teksta */
+.protetika-hero-text p {
+  margin: 0 0 10px;
+  color: #475569;
+  font-size: 0.98rem;
 }
 
-/* === TEKST + SLIKA SEKTOR === */
-.protetika-body {
-  display: grid;                         /* Koristi grid raspored */
-  grid-template-columns: 1.2fr 1fr;      /* Dve kolone: tekst je 20% širi */
-  gap: 18px;                             /* Razmak između teksta i slike */
-  align-items: start;                    /* Poravnanje elemenata na vrh */
-  margin-top: 8px;                       /* Razmak iznad ove sekcije */
-  /* Smanji margin-top da bi sve bilo zbijenije (ili povećaj ako ti treba više prostora) */
-}
-
-.protetika-body img {
-  width: 100%;                           /* Slika se rasteže do širine kolone */
-  border-radius: 14px;                   /* Zaobljeni uglovi */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Senka ispod slike */
-  display: block;                        /* Uklanja dodatni razmak ispod slike */
-}
-
-/* === CTA – dugme za zakazivanje pregleda === */
-.protetika-cta {
-  margin-top: 12px;                      /* Razmak između teksta i dugmeta */
+.protetika-tag {
   display: inline-block;
-  background: #059669;                   /* Zelena boja pozadine dugmeta */
-  color: #fff;                           /* Bela boja teksta */
-  padding: 12px 22px;                    /* Unutrašnji razmak unutar dugmeta */
-  border-radius: 12px;                   /* Zaobljeni uglovi */
-  text-decoration: none;                 /* Uklanja podvlačenje */
-  font-weight: 700;                      /* Deblji font */
-  transition: all 0.2s ease-in-out;      /* Animacija pri hover efektu */
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
-.protetika-cta:hover {
-  background: #047857;                   /* Tamnija nijansa zelene pri hover-u */
-  transform: translateY(-1px);           /* Blago pomera dugme naviše pri hover-u */
-  box-shadow: 0 12px 28px rgba(4, 120, 87, 0.28); /* Jača senka pri hover-u */
+.protetika-list-wrapper {
+  margin-top: 10px;
 }
 
-/* === SEKCIJE / BLOKOVI === */
-.protetika-block {
-  margin-top: -100px;                      /* Razmak iznad svake sekcije/bloka */
-  /* Ako želiš da blokovi budu bliži, smanji margin-top: npr. 24px */
+.protetika-list-wrapper h2 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
 }
 
-/* === GRID raspored za kartice (npr. vrste nadoknada) === */
+.protetika-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.protetika-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 6px;
+}
+
+.protetika-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #059669;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Slika u hero sekciji */
+
+.protetika-hero-image img {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 3px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  object-fit: cover;
+}
+
+/* === GRID KARTICE ISPOD HERO-A === */
+
 .protetika-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsive grid */
-  gap: 20px;                              /* Razmak između kartica */
-  margin-top: 16px;                       /* Razmak između naslova i grida */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: -12px;
+  margin-bottom: -56px;
 }
 
-/* === POJEDINAČNA KARTICA === */
+.protetika-grid-two {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
 .protetika-card {
-  background: #fff;                      /* Bela pozadina */
-  border: 1px solid #eef2f7;             /* Svetla bordura */
-  border-radius: 14px;                   /* Zaobljeni uglovi */
-  padding: 18px;                         /* Unutrašnji razmak */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);  /* Senka */
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-.protetika-card h3 {
-  margin-top: 0;                         /* Nema razmaka iznad naslova */
-  margin-bottom: 8px;                    /* Mali razmak ispod */
-  color: #111827;                        /* Tamna boja */
+.protetika-card h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  color: #0f172a;
 }
 
 .protetika-card p {
-  margin: 0;                             /* Bez dodatnog razmaka */
-  color: #374151;                        /* Neutralna siva boja */
-  line-height: 1.6;                      /* Pročitljivost teksta */
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.96rem;
+  line-height: 1.6;
 }
 
-/* === RESPONSIVE PRILAGOĐAVANJE === */
-@media (max-width: 800px) {
-  .protetika-body {
-    grid-template-columns: 1fr;          /* Tekst i slika se slažu jedan ispod drugog */
+/* Akcentovana kartica – blaga zelena pozadina */
+
+.protetika-card-accent {
+  background: #ecfdf5;
+  border-color: #bbf7d0;
+}
+
+/* === DETALJNE KARTICE SA HEADER-om === */
+
+.protetika-card-detailed {
+  padding: 24px;
+}
+
+.protetika-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.protetika-card-header h2 {
+  margin: 0;
+}
+
+.protetika-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #059669;
+  background: #d1fae5;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.protetika-pill-secondary {
+  color: #0369a1;
+  background: #e0f2fe;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 1024px) {
+  .protetika-page {
+    padding-top: 72px;
+  }
+
+  .protetika-hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 22px 18px;
+  }
+
+  .protetika-hero-image {
+    order: -1;
+  }
+
+  .protetika-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: 20px;
   }
 }

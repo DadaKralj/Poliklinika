@@ -38,9 +38,6 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .mapa iframe { height: 380px; }
-}
-@media (max-width: 768px) {
   .mapa { margin: 40px 16px; border-radius: 12px; }
   .mapa iframe { height: 320px; }
 }

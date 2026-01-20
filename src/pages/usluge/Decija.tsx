@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Decija.css";
-import img from "../../pictures/services_orthodontics_aligners_braces.png";
+import img from "../../pictures/decija.jpg";
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Decija: React.FC = () => {
@@ -18,33 +18,44 @@ const Decija: React.FC = () => {
     <main className="decija-page">
       {/* HERO BLOK – DEČIJA STOMATOLOGIJA */}
       <section className="decija-hero">
-        <div className="decija-hero-text">
-          <p className="decija-tag">
-            {t(
-              "Dečija i preventivna stomatologija",
-              "Pediatric & preventive dentistry"
-            )}
-          </p>
-          <h1>
-            {t(
-              "Zdrav osmeh od najranijeg detinjstva",
-              "Healthy smile from early childhood"
-            )}
-          </h1>
+        <div className="decija-hero-top">
+          <div className="decija-hero-text">
+            <p className="decija-tag">
+              {t(
+                "Dečija i preventivna stomatologija",
+                "Pediatric & preventive dentistry"
+              )}
+            </p>
+            <h1>
+              {t(
+                "Zdrav osmeh od najranijeg detinjstva",
+                "Healthy smile from early childhood"
+              )}
+            </h1>
 
-          <p>
-            {t(
-              "Dečija stomatologija posvećena je zdravlju zuba dece od najranijeg uzrasta do adolescencije. Prvi pregledi bi trebalo da počnu već sa pojavom prvih mlečnih zuba, kako bi dete steklo naviku odlaska kod stomatologa i razvilo poverenje bez straha.",
-              "Pediatric dentistry is dedicated to the dental health of children from infancy through adolescence. Initial check-ups should begin with the eruption of the first baby teeth so a child develops the habit of visiting the dentist and feels comfortable."
-            )}
-          </p>
-          <p>
-            {t(
-              "Mlečni zubi su važni jer čuvaju prostor za stalne zube, omogućavaju pravilno žvakanje i normalan razvoj govora. Zato ih je potrebno negovati i lečiti isto kao i stalne zube.",
-              "Primary teeth are important because they hold space for permanent teeth, enable proper chewing, and support normal speech development. They should be cared for and treated just like permanent teeth."
-            )}
-          </p>
+            <p>
+              {t(
+                "Dečija stomatologija posvećena je zdravlju zuba dece od najranijeg uzrasta do adolescencije. Prvi pregledi bi trebalo da počnu već sa pojavom prvih mlečnih zuba, kako bi dete steklo naviku odlaska kod stomatologa i razvilo poverenje bez straha.",
+                "Pediatric dentistry is dedicated to the dental health of children from infancy through adolescence. Initial check-ups should begin with the eruption of the first baby teeth so a child develops the habit of visiting the dentist and feels comfortable."
+              )}
+            </p>
+            <p>
+              {t(
+                "Mlečni zubi su važni jer čuvaju prostor za stalne zube, omogućavaju pravilno žvakanje i normalan razvoj govora. Zato ih je potrebno negovati i lečiti isto kao i stalne zube.",
+                "Primary teeth are important because they hold space for permanent teeth, enable proper chewing, and support normal speech development. They should be cared for and treated just like permanent teeth."
+              )}
+            </p>
+          </div>
 
+          <div className="decija-hero-image">
+            <img
+              src={img}
+              alt={t("Dečija stomatologija", "Pediatric dentistry")}
+            />
+          </div>
+        </div>
+
+        <div className="decija-hero-bottom">
           <div className="decija-list-wrapper">
             <h2>
               {t(
@@ -81,21 +92,13 @@ const Decija: React.FC = () => {
                 )}
               </li>
             </ul>
+            <p className="decija-note">
+              {t(
+                "Naš cilj je da dete od malih nogu stekne zdrave navike, razume važnost redovnih pregleda i održi zdrav osmeh tokom celog života.",
+                "Our goal is for children to develop healthy habits from an early age, understand the importance of regular check-ups, and maintain a healthy smile throughout life."
+              )}
+            </p>
           </div>
-
-          <p className="decija-note">
-            {t(
-              "Naš cilj je da dete od malih nogu stekne zdrave navike, razume važnost redovnih pregleda i održi zdrav osmeh tokom celog života.",
-              "Our goal is for children to develop healthy habits from an early age, understand the importance of regular check-ups, and maintain a healthy smile throughout life."
-            )}
-          </p>
-        </div>
-
-        <div className="decija-hero-image">
-          <img
-            src={img}
-            alt={t("Dečija stomatologija", "Pediatric dentistry")}
-          />
         </div>
       </section>
 

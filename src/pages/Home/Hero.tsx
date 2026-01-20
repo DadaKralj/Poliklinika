@@ -1,6 +1,6 @@
 import React from "react";
 import "./Hero.css";
-import heroBg from "../../pictures/Home_background.png";
+import heroBg from "../../pictures/masa1.jpeg";
 
 // ⬇️ Global language context
 import { useLanguage } from "../../Context/LanguageContext";

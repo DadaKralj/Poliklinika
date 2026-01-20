@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Zaposleni.css";
-import PersonImg from "../../pictures/anonimus.jpg";
+import PersonImg from "../../pictures/image7.jpeg";
 import { useLanguage } from "../../Context/LanguageContext";
 
 const DjordjePetrovic: React.FC = () => {
@@ -23,7 +23,7 @@ const DjordjePetrovic: React.FC = () => {
             </div>
 
             <div className="bio-content">
-              <p className="bio-tag">{t("Stručni saradnik", "Expert collaborator")}</p>
+              <p className="bio-tag">{t("Tim Stomatološke poliklinike Papić", "Team of Stomatološka Poliklinika Papić")}</p>
 
               <h1>{t("Prof. dr sci. Đorđe Petrović", "Prof. Dr. Đorđe Petrović")}</h1>
               <h2>{t("Specijalista ortopedije vilica", "Specialist in jaw orthopedics")}</h2>

@@ -33,8 +33,14 @@ const StatCircle: React.FC<StatCircleProps> = ({
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
+          // Element je ušao u viewport - pokreni animaciju
+          start = null;
+          setVal(0);
           raf = requestAnimationFrame(step);
-          io.disconnect();
+        } else {
+          // Element je izašao iz viewport-a - zaustavi animaciju i resetuj
+          cancelAnimationFrame(raf);
+          setVal(0);
         }
       },
       { threshold: 0.4 }
@@ -68,9 +74,9 @@ export const StatistikaSekcija: React.FC = () => {
 
   return (
     <div className="stat-section">
-      <StatCircle to={100} label={t("Godine rada", "Years of experience")} />
-      <StatCircle to={10000} label={t("Zadovoljnih pacijenata", "Satisfied patients")} />
-      <StatCircle to={10} label={t("Usluga koje pružamo", "Services we provide")} />
+      <StatCircle to={30} label={t("Godine rada", "Years of experience")} />
+      <StatCircle to={100000} label={t("Zadovoljnih pacijenata", "Satisfied patients")} />
+      <StatCircle to={40} label={t("Usluga koje pružamo", "Services we provide")} />
     </div>
   );
 };

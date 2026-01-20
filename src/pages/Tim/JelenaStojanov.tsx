@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Zaposleni.css";
-import JelenaImg from "../../pictures/anonimus.jpg"; // zameni stvarnom slikom
+import JelenaImg from "../../pictures/image2.jpeg"; // zameni stvarnom slikom
 import { useLanguage } from "../../Context/LanguageContext";
 
 const JelenaStojanov: React.FC = () => {

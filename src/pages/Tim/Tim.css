@@ -7,32 +7,99 @@
 }
 
 .tim-header {
-  background-color: #1772a3; /* Plava pozadina */
+  background: linear-gradient(135deg, #1772a3 0%, #0e9488 100%);
   padding: 120px 20px 120px; 
   text-align: center;
-  color: #ffffff; /* Belo za ceo tekst */
-  width: 100vw;            /* Širina preko celog ekrana */
-  margin-left: calc(-50vw + 50%); /* Izlazak iz kontejnera ako je u centriranom wrapperu */
-  position: relative;      /* Omogućava slojeve iznad ako bude trebalo */
-  /* Dodato za centriranje */
+  color: #ffffff;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 300px; /* Povećaj po potrebi ako želiš više vertikalnog prostora */
+  min-height: 300px;
+  overflow: hidden;
+}
+
+/* Dekorativni elementi */
+.tim-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.tim-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-30px) translateX(20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tim-header h1 {
-  font-size: clamp(40px, 5vw, 48px); /* Veći, responzivni naslov */
+  font-size: clamp(40px, 5vw, 48px);
   font-weight: 800;
   margin: 0 0 12px;
-  color: #ffffff; /* Osigurava da je tekst beo */
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+  animation: fadeInDown 0.8s ease-out;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.5px;
 }
 
 .tim-header p {
   font-size: 26px;
-  color: #e6f1f6; /* Svetlija nijansa plave/bela za podnaslov */
+  color: rgba(255, 255, 255, 0.95);
   margin: 0;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  font-weight: 300;
+  letter-spacing: 0.3px;
 }
 
 

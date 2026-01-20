@@ -1,65 +1,73 @@
 // src/pages/Tim/Tim.tsx
 import React from "react";
 import "./Tim.css";
-import DefaultImage from "../../pictures/anonimus.jpg";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../Context/LanguageContext";
+import Jelena from "../../pictures/image4.jpeg";
+import Nada from "../../pictures/image0.jpeg";
+import JelenaStojanov from "../../pictures/image2.jpeg";
+import Djordje from "../../pictures/image7.jpeg";
+import Danica from "../../pictures/image8.jpeg";
+import Mirjana from "../../pictures/image3.jpeg";
+import Momirka from "../../pictures/image1.jpeg";
+import Dragana from "../../pictures/image6.jpeg";
+import Gordana from "../../pictures/image5.jpeg";
 
 const tim = [
   {
     ime: "Dr Jelena Stojanov",
-    titula: "Specijalista preventivne i dečije stomatologije",
+    titula: "Specijalista dečije i preventivne stomatologije",
     opis: "Osnivač poliklinike Papić od 2022. ",
     opis_en: "Founder of Poliklinika Papić since 2022.",
-    slika: DefaultImage,
+    slika: JelenaStojanov,
     path: "/tim/jelena-stojanov",
   },
   {
     ime: "Dr Jelena Gudelj Petrović",
     titula: "Specijalista stomatološke protetike",
-    slika: DefaultImage,
+    slika: Jelena,
     path: "/tim/jelena-gudelj",
   },
   {
     ime: "Dr Nada Jelača",
-    titula: "Specijalista stomatološke protetike",
-    slika: DefaultImage,
+    titula: "Specijalista oralne hirurgije",
+    slika: Nada,
     path: "/tim/nada-jelaca",
   },
   {
     ime: "Prof. dr sci. Đorđe Petrović",
     titula: "Specijalista ortopedije vilica",
-    slika: DefaultImage,
+    slika: Djordje,
     path: "/tim/djordje-petrovic",
   },
   {
     ime: "Dr Danica Novaković",
     titula: "Specijalista oralne hirurgije i implantologije",
-    slika: DefaultImage,
+    slika: Danica,
     path: "/tim/danica-novakovic",
   },
   {
     ime: "Mirjana Skakić",
     titula: "Stomatološka sestra",
-    slika: DefaultImage,
+    slika: Mirjana,
     path: "/tim/mirjana-skakic",
   },
   {
     ime: "Momirka Nedeljkov",
     titula: "Stomatološka sestra",
-    slika: DefaultImage,
+    slika: Momirka,
     path: "/tim/momirka-nedeljkov",
   },
   {
     ime: "Dragana Malbaša",
     titula: "Stomatološka sestra",
-    slika: DefaultImage,
+    slika: Dragana,
     path: "/tim/dragana-malbasa",
   },
   {
     ime: "Gordana Papić",
     titula: "zubni tehničar",
-    slika: DefaultImage,
+    slika: Gordana,
     path: "/tim/gordana-papic",
   },
 ];

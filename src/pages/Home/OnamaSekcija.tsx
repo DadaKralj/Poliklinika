@@ -2,30 +2,42 @@
 import React from "react";
 import "./OnamaSekcija.css";
 
-import SavoPapic from "../../pictures/savo-papic.jpg";
-import OlgaPapic from "../../pictures/olga-papic.jpg";
+import SavoPapic from "../../pictures/deda.jpg";
+import OlgaPapic from "../../pictures/baba.jpg";
+import NasTim from "../../pictures/nastim.jpeg";
+import videoPozdina from "../../pictures/videopozadina.mp4";
+import zgradaPoliklinike from "../../pictures/zgradaPoliklinike.png";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../../Context/LanguageContext";
 
-type Props = {
-  slikaPoliklinike: string;
-  slikaDoktora: string;
-};
-
-const OnamaSekcija: React.FC<Props> = ({ slikaPoliklinike, slikaDoktora }) => {
+const OnamaSekcija: React.FC = () => {
   // Uzmi globalni jezik iz konteksta i helper za prevod
   const { language } = useLanguage();
   const t = (sr: string, en: string) => (language === "sr" ? sr : en);
 
   return (
     <section id="onama" className="onama">
+      {/* Video pozadina */}
+      <video 
+        className="onama-video-bg" 
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+      >
+        <source src={videoPozdina} type="video/mp4" />
+      </video>
+      
+      {/* Overlay preko videa */}
+      <div className="onama-overlay" />
+      
       <h2>{t("O nama", "About us")}</h2>
 
       <div className="onama-content">
         {/* RED 1: Slika poliklinike levo, tekst desno */}
         <div className="onama-row">
           <div className="onama-image">
-            <img src={slikaPoliklinike} alt={t("Poliklinika Papić - objekat", "Poliklinika Papić - facility")} />
+            <img src={zgradaPoliklinike} alt={t("Poliklinika Papić - objekat", "Poliklinika Papić - facility")} />
           </div>
 
           <div className="onama-text">
@@ -67,7 +79,7 @@ const OnamaSekcija: React.FC<Props> = ({ slikaPoliklinike, slikaDoktora }) => {
         {/* RED 3: Slika tima levo, opis tima desno */}
         <div className="onama-row">
           <div className="onama-team-image">
-            <img src={slikaDoktora} alt={t("Tim doktora Poliklinike Papić", "Poliklinika Papić medical team")} />
+            <img src={NasTim} alt={t("Tim doktora Poliklinike Papić", "Poliklinika Papić medical team")} />
           </div>
 
           <div className="onama-team-text">

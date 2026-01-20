@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Estetika.css";
-import estetskiImg from "../../pictures/restaurativna stomatologija.png"; // promeni sliku ako želiš
+import estetskiImg from "../../pictures/est.jpeg"; // promeni sliku ako želiš
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Estetika: React.FC = () => {
@@ -72,7 +72,7 @@ const Estetika: React.FC = () => {
         </article>
 
         {/* KERAMIČKE KRUNICE I MOSTOVI */}
-        <article className="estet-card estet-card-accent">
+        <article className="estet-card">
           <h2>{t("Keramičke krunice i mostovi", "Ceramic crowns and bridges")}</h2>
           <p>
             {t(

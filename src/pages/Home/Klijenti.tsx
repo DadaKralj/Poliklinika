@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState, useCallback } from 'react';
-import bgImage from '../../pictures/office.png';
+import bgImage from '../../pictures/poliklinika.jpg';
 import './Klijenti.css';
 import { useLanguage } from "../../Context/LanguageContext";
 
@@ -145,41 +145,37 @@ const Klijenti: React.FC = () => {
   }, [current, n, stepPx, animating]);
 
   // Animacija prema LIJEVO (prev)
-const slidePrev = useCallback(() => {
-  if (animating || stepPx === null) return;
-  setAnimating(true);
+  const slidePrev = useCallback(() => {
+    if (animating || stepPx === null) return;
+    setAnimating(true);
 
-  const track = trackRef.current!;
-  const prevIdx = mod(current - 1, n);
+    const track = trackRef.current!;
+    const prevIdx = mod(current - 1, n);
 
-  // 1) Mirno stanje: -stepPx (kao i kod next)
-  track.style.transition = "none";
-  track.style.transform = `translate3d(-${stepPx}px, 0, 0)`;
-
-  // 2) Forsiraj reflow
-  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-  track.offsetHeight;
-
-  // 3) Animiraj udesno: -stepPx -> 0
-  track.style.transition = `transform ${TRANSITION_MS}ms ease-in-out`;
-  track.style.transform = "translate3d(0px, 0, 0)";
-
-  const onEnd = () => {
-    track.removeEventListener("transitionend", onEnd);
-
-    // prvo menjamo current (logika karata)
+    // 1) ODMAH ažuriraj state - kartice će se rendirati sa novim indexima
     setCurrent(prevIdx);
 
-    // pa tek u sledećem frejmu "snapujemo" transform nazad
-    requestAnimationFrame(() => {
-      track.style.transition = "none";
+    // 2) Postavi početnu poziciju na -2*stepPx (jer smo dodali karticu sa leve strane)
+    track.style.transition = 'none';
+    track.style.transform = `translate3d(-${2 * stepPx}px, 0, 0)`;
+
+    // 3) Forsiraj reflow - da browser primeni početno stanje
+    track.offsetHeight;
+
+    // 4) Uključi animaciju i animiraj do -stepPx (normalna pozicija)
+    track.style.transition = `transform ${TRANSITION_MS}ms ease-in-out`;
+    track.style.transform = `translate3d(-${stepPx}px, 0, 0)`;
+
+    // 5) Nakon animacije, resetuj bez tranzicije
+    const onEnd = () => {
+      track.removeEventListener('transitionend', onEnd);
+      track.style.transition = 'none';
       track.style.transform = `translate3d(-${stepPx}px, 0, 0)`;
       setAnimating(false);
-    });
-  };
+    };
 
-  track.addEventListener("transitionend", onEnd, { once: true });
-}, [current, n, stepPx, animating]);
+    track.addEventListener('transitionend', onEnd, { once: true });
+  }, [current, n, stepPx, animating]);
 
 
 
@@ -222,13 +218,6 @@ const slidePrev = useCallback(() => {
                     if (cardsRef.current) cardsRef.current[i] = el;
                   }}
                 >
-                  <div className="klijent-icon" aria-hidden="true">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2c1.1 0 2 .9 2 2v1.5c0 .83.67 1.5 1.5 1.5C17.88 7 19 8.12 19 9.5V12c0 1.66-1.34 3-3 3h-1c0 2-1 4-3 4s-3-2-3-4H6c-1.66 0-3-1.34-3-3V9.5C3 8.12 4.12 7 5.5 7 6.33 7 7 6.33 7 5.5V4c0-1.1.9-2 2-2h3z" fill="#0e9488" opacity="0.95" />
-                      <path d="M12 3.5v3.5" stroke="#0e9488" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-
                   <div className="ime">{k.ime}</div>
                   <div className="zvezdice" aria-hidden="true">★★★★★</div>
                   <div className="tekst">{t(k.tekst_sr, k.tekst_en)}</div>

@@ -1,31 +1,48 @@
 /* ===== Footer (Kontakt) ===== */
 
 .kontakt-footer {
-  background: #f6fbfa;
-  padding: 64px 20px;
+  background: #f8f9fa;
+  padding: 80px 40px;
   border-radius: 20px;
 }
 
 .kontakt-top {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr 1.2fr auto; /* brand | nav | lokacija | CTA */
-  gap: 32px;
-  align-items: start;
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
+  max-width: 1300px;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .kf-col h3 {
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   font-weight: 800;
-  font-size: 14px;
-  color: #0f766e; /* teal nijansa */
-  margin: 0 0 12px;
+  font-size: 13px;
+  color: #1a1a1a;
+  margin: 0 0 20px;
+  text-transform: uppercase;
 }
 
 .brand-title {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0e7490;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1.2;
+}
+
+.brand-line {
+  font-size: 34px;
+  font-weight: 700;
+  color: #248ec7;
+  letter-spacing: 0.3px;
+}
+
+.brand-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: #248ec7;
+  margin-top: 0;
 }
 
 /* Social */
@@ -65,73 +82,83 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .kf-col.nav a {
   text-decoration: none;
-  color: #1f2937;
+  color: #6b7280;
+  font-size: 15px;
+  transition: color 0.2s ease;
 }
 
 .kf-col.nav a:hover {
-  color: #0e7490;
+  color: #5eb9b5;
 }
 
 /* Lokacija */
 .kf-col.lokacija address {
   font-style: normal;
-  color: #111827;
-  margin-bottom: 12px;
-  line-height: 1.4;
+  color: #6b7280;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  font-size: 15px;
 }
 
 .info-row {
   display: flex;
   gap: 12px;
-  align-items: center;
-  margin-top: 10px;
+  align-items: flex-start;
+  margin-top: 14px;
 }
 
 .info-row .label {
   color: #6b7280;
-  font-size: 14px;
+  font-size: 13px;
+  margin-bottom: 2px;
 }
 
 .info-row .value {
-  color: #111827;
+  color: #1f2937;
   font-weight: 600;
   text-decoration: none;
+  font-size: 15px;
 }
 
 /* CTA dugme */
 .cta-wrap {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 20px;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background: #248ec7; /* teal */
+  gap: 10px;
+  background: #248ec7;
   color: #fff;
   text-decoration: none;
-  padding: 14px 28px;
-  border-radius: 999px;
-  font-weight: 800;
-  box-shadow: 0 10px 30px rgba(79, 182, 174, 0.25);
+  padding: 16px 32px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(36, 142, 199, 0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
 }
 
 .cta:hover {
-  background: #409f98;
+  background: #1e7bb3;
+  color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(79, 182, 174, 0.35);
+  box-shadow: 0 12px 28px rgba(36, 142, 199, 0.35);
 }
 
 .cta-icon {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* Divider i bottom bar */
@@ -157,53 +184,75 @@
 .to-top {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: #0e7490;
+  gap: 12px;
+  color: #248ec7;
   text-decoration: none;
   font-weight: 600;
+  font-size: 20px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.to-top:hover {
+  transform: translateY(-2px);
+  color: #1e7bb3;
 }
 
 .to-top-icon {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid #6ee7e7;
+  border: 2px solid #248ec7;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 20px;
+  color: #248ec7;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.to-top:hover .to-top-icon {
+  border-color: #1e7bb3;
+  color: #1e7bb3;
+  transform: translateY(-2px);
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .kontakt-top {
-    grid-template-columns: 1.2fr 1fr 1fr; /* CTA ispod */
-  }
-  .cta-wrap {
-    grid-column: 1 / -1;
-    justify-content: center;
+    gap: 60px;
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
   .kontakt-top {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
   }
-  .brand-title {
+  .cta-wrap {
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+  }
+  .kontakt-footer {
+    padding: 48px 24px;
+    border-radius: 14px;
+  }
+  .kf-col {
+    width: 100%;
     text-align: center;
-  }
-  .social {
-    align-self: center;
   }
   .kf-col.nav ul,
   .kf-col.lokacija {
-    align-items: flex-start;
+    align-items: center;
   }
-  .cta-wrap {
+  .info-row {
     justify-content: center;
   }
-  .kontakt-footer {
-    border-radius: 14px;
+  .brand-title {
+    text-align: center;
   }
 }

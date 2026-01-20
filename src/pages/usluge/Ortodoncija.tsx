@@ -1,4 +1,4 @@
-import img from '../../pictures/services_orthodontics_aligners_braces.png';
+import img from '../../pictures/tica.jpeg';
 import React, { useEffect } from "react";
 import "./Ortodoncija.css";
 import { useLanguage } from "../../Context/LanguageContext";

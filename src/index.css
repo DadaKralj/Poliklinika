@@ -46,7 +46,7 @@ section {
   margin-bottom: 40px; /* prostor između sekcija */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   section {
     padding: 40px 15px; /* manji padding za mobilne */
     margin-bottom: 30px;

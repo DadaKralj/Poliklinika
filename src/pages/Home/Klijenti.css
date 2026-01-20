@@ -1,8 +1,8 @@
 :root {
-  --card-gap: 32px;
-  --card-radius: 28px;
-  --card-padding-vertical: 48px;
-  --card-padding-horizontal: 64px;
+  --card-gap: 48px;
+  --card-radius: 24px;
+  --card-padding-vertical: 32px;
+  --card-padding-horizontal: 40px;
   --brand-teal: #1aa7a1;
   --text-muted: #777777;
   --cards-visible: 2;
@@ -10,8 +10,12 @@
 
 .klijenti {
   position: relative;
-  width: 100%;
-  padding: 80px 20px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  padding: 140px 0;
   text-align: center;
   background-size: cover;
   background-position: center;
@@ -27,13 +31,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: inherit;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-color: rgba(0, 0, 0, 0.48);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 0;
-  backdrop-filter: blur(2px);
+  pointer-events: none;
 }
 
 .klijenti > * {
@@ -43,26 +43,28 @@
 
 .klijenti .subtitle {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0 40px;
   text-align: left;
   color: rgba(255, 255, 255, 0.9);
   font-weight: 300;
   letter-spacing: 2px;
   font-size: clamp(12px, 1.2vw, 14px);
   margin-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .klijenti h2 {
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto 32px;
+  margin: 0 0 32px 0;
+  padding: 0 40px;
   text-align: left;
   color: #ffffff;
   font-size: clamp(24px, 3.6vw, 44px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: 0.6px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .carousel {
@@ -72,10 +74,9 @@
   justify-content: center;
   gap: 12px;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
+  margin: 0;
   box-sizing: border-box;
-  padding: 0 20px;
+  padding: 0 40px;
 }
 
 .arrow {
@@ -98,7 +99,7 @@
 }
 
 .carousel .arrow {
-  margin: 0 -28px;
+  margin: 0 -10px;
   align-self: center;
 }
 
@@ -123,6 +124,7 @@
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
+  padding: 0 4px;
 }
 
 .klijenti .carousel-track {
@@ -133,13 +135,13 @@
 }
 
 .klijenti .klijent-kartica {
-  flex: 0 0 calc((100% - var(--card-gap)) / var(--cards-visible));
+  flex: 0 0 calc((100% - var(--card-gap) * (var(--cards-visible) - 1)) / var(--cards-visible));
   margin-right: var(--card-gap);
   background: #ffffff;
   padding: var(--card-padding-vertical) var(--card-padding-horizontal);
   border-radius: var(--card-radius);
   box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
-  min-height: 320px;
+  min-height: 240px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,19 +152,6 @@
 
 .klijenti .klijent-kartica:last-child {
   margin-right: 0;
-}
-
-.klijent-icon {
-  width: 84px;
-  height: 84px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(26, 167, 161, 0.12), rgba(26, 167, 161, 0.06));
-  margin-bottom: 18px;
-  box-shadow: 0 6px 18px rgba(26, 167, 161, 0.06);
-  flex-shrink: 0;
 }
 
 .ime {
@@ -198,67 +187,48 @@
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   :root {
-    --card-padding-horizontal: 40px;
-    --card-padding-vertical: 36px;
-    --card-gap: 24px;
-  }
-  .klijenti h2 {
-    font-size: clamp(22px, 4vw, 34px);
-  }
-  .klijent-icon {
-    width: 68px;
-    height: 68px;
-  }
-}
-
-@media (max-width: 767px) {
-  :root {
-    --card-padding-horizontal: 28px;
-    --card-padding-vertical: 28px;
+    --card-padding-horizontal: 24px;
+    --card-padding-vertical: 24px;
     --card-gap: 16px;
     --cards-visible: 1;
   }
 
   .klijenti {
-    padding: 48px 16px;
+    padding: 80px 0;
   }
 
   .klijenti .subtitle,
   .klijenti h2 {
     text-align: center;
     width: auto;
+    padding: 0 16px;
   }
 
   .klijenti .klijent-kartica {
-    padding: 36px 24px;
-    border-radius: 22px;
-    min-height: 340px;
+    padding: 32px 20px;
+    border-radius: 20px;
+    min-height: 260px;
   }
 
   .carousel {
-    padding: 0;
+    padding: 0 16px;
   }
 
   .carousel .arrow {
     margin: 0 -12px;
   }
-
-  .klijent-icon {
-    width: 64px;
-    height: 64px;
-  }
 }
 
 @media (max-width: 479px) {
   :root {
-    --card-padding-horizontal: 20px;
-    --card-padding-vertical: 24px;
+    --card-padding-horizontal: 18px;
+    --card-padding-vertical: 20px;
   }
 
   .klijenti {
-    padding: 36px 12px;
+    padding: 60px 0;
   }
 
   .klijenti h2 {
@@ -268,6 +238,7 @@
   .klijenti .subtitle {
     font-size: 11px;
     margin-bottom: 6px;
+    padding: 0 12px;
   }
 
   .arrow {
@@ -278,11 +249,6 @@
 
   .carousel .arrow {
     margin: 0 -8px;
-  }
-
-  .klijent-icon {
-    width: 56px;
-    height: 56px;
   }
 
   .ime {

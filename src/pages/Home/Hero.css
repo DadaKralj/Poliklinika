@@ -98,7 +98,7 @@
 
 
 /* responzivno: centriraj tekst na malim ekranima */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-inner { justify-content: center; text-align: center; }
   .hero-text { max-width: 90vw; }
 }

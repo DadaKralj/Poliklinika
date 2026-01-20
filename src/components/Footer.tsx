@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// @ts-ignore
+import { HashLink } from "react-router-hash-link";
 import "./Footer.css";
 // ⬇️ Global language context
 import { useLanguage } from "../Context/LanguageContext";
@@ -14,10 +16,12 @@ const Footer: React.FC = () => {
   return (
     <section id="kontakt" className="kontakt-footer">
       <div className="kontakt-top">
-        {/* Brand + social */}
+        {/* Brand */}
         <div className="kf-col brand">
           <div className="brand-title">
-            {t("Stomatološka poliklinika Papić", "Papic Dental Clinic")}
+            <div className="brand-line">{t("Stomatološka", "Dental")}</div>
+            <div className="brand-line">{t("poliklinika", "Clinic")}</div>
+            <div className="brand-line brand-name">{t("Papić", "Papic")}</div>
           </div>
         </div>
 
@@ -26,14 +30,14 @@ const Footer: React.FC = () => {
           <h3>{t("NAVIGACIJA", "NAVIGATION")}</h3>
           <ul>
             <li>
-              <a href="#pocetna">
+              <HashLink smooth to="/#pocetna">
                 {t("Početna", "Home")}
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a href="#onama">
+              <HashLink smooth to="/#onama">
                 {t("O nama", "About us")}
-              </a>
+              </HashLink>
             </li>
             <li>
               <Link to="/usluge">
@@ -41,14 +45,14 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <a href="#galerija">
+              <HashLink smooth to="/#galerija">
                 {t("Galerija", "Gallery")}
-              </a>
+              </HashLink>
             </li>
             <li>
-              <a href="#kontakt">
+              <HashLink smooth to="/#kontakt">
                 {t("Kontakt", "Contact")}
-              </a>
+              </HashLink>
             </li>
           </ul>
         </nav>
@@ -126,12 +130,19 @@ const Footer: React.FC = () => {
           {t("Sva prava zadržana", "All Rights Reserved")}
           <br />
           {t(
-            "Hosting i razvoj: itsystem",
-            "Hosted & developed by itsystem"
+            "Hosting i razvoj: Nikola Danilović i Luka Bukurov",
+            "Hosted & developed by Nikola Danilović and Luka Bukurov"
           )}
         </div>
 
-        <a className="to-top" href="#pocetna">
+        <a 
+          className="to-top" 
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+        >
           {t("Vratite se na početak", "Back to top")}
           <span className="to-top-icon" aria-hidden="true">↑</span>
         </a>

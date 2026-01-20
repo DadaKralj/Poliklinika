@@ -1,4 +1,4 @@
-import img from '../../pictures/services_dental_surgery_tools_gloves.png';
+import img from '../../pictures/hirurgija1.png';
 import React, { useEffect } from "react";
 import "./Hirurgija.css";
 import { useLanguage } from "../../Context/LanguageContext";

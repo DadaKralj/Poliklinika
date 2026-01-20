@@ -3,7 +3,7 @@
 
 /* ========== Preview sekcija glavnih usluga ========== */
 .glavne-usluge {
-  background: #f9fafb;
+  background: #ffffff;
   padding: 60px 20px;
   text-align: center;
 }
@@ -29,7 +29,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45), 0 3px 8px rgba(0, 0, 0, 0.1);
   width: 250px;
   height: 250px;
   display: flex;
@@ -38,27 +38,18 @@
   position: relative;
   overflow: hidden;
   padding-bottom: 15px;
-}
-
-/* Overlay preko slike radi čitljivosti teksta */
-.ikona::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15));
-  z-index: 1;
+  transition: all 0.3s ease;
 }
 
 /* Tekst unutar ikonice */
 .ikona p {
   position: relative;
-  color: white;
+  color: #000000;
   font-size: 18px;
   font-weight: 800;
   z-index: 2;
   text-align: center;
   line-height: 1.2;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 /* (Retko korišćeno – fallback za <img> unutar .ikona ako se koristi) */
@@ -72,10 +63,42 @@
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.ikona-link:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+.ikona-link:hover .ikona {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ========== Responsive za mobilne uređaje ========== */
+@media (max-width: 1024px) {
+  .glavne-usluge {
+    padding: 40px 15px;
+  }
+
+  .glavne-usluge h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+  }
+
+  .ikone {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .ikona {
+    width: 100%;
+    height: 160px;
+  }
+
+  .ikona p {
+    margin-bottom: -5px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 5px;
+    line-height: 1.1;
+  }
 }

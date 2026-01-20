@@ -40,7 +40,7 @@ section {
 
 
 /* Responsive dizajn */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero-section {
     flex-direction: column; /* Slika ide ispod teksta */
     text-align: center;

@@ -24,6 +24,7 @@ import MirjanaSkakic from "./pages/Tim/MirjanaSkakic";
 import MomirkaNedeljkov from "./pages/Tim/MomirkaNedeljkov";
 import DraganaMalbasa from "./pages/Tim/DraganaMalbasa";
 import GordanaPapic from "./pages/Tim/GordanaPapic";
+import Galerija from "./pages/galerija";
 
 
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="/usluge/implantologija" element={<Implantologija />} />
         <Route path="/usluge/estetski-tretmani" element={<Estetika />} />
         <Route path="/usluge/dijagnostika" element={<Dijagnostika />} />
+        <Route path="/galerija" element={<Galerija />} />
 
         {/* tim routes */}
         <Route path="/tim/jelena-stojanov" element={<JelenaStojanov />} />

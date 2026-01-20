@@ -3,10 +3,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Service.css";
 
-import prostheticsImg from "../../pictures/services_prosthetics_implants_smile.png";
-import orthodonticsImg from "../../pictures/services_orthodontics_aligners_braces.png";
-import surgeryImg from "../../pictures/services_dental_surgery_tools_gloves.png";
-import restauracijaIcon from "../../pictures/restaurativna stomatologija.png";
+import prostheticsImg from "../../pictures/protetika.jpeg";
+import orthodonticsImg from "../../pictures/ortodoncija.jpeg";
+import surgeryImg from "../../pictures/hirurgija.jpeg";
+import restauracijaIcon from "../../pictures/restaurativna.jpeg";
+import Decija from "../../pictures/decija.jpeg";
+import estetika from "../../pictures/estetska.jpeg";
+import dijagnostika from "../../pictures/dijagnostika.jpeg";
+import implantologija from "../../pictures/implantologija.jpeg";
 
 // ⬇️ Uvoz konteksta i funkcija za prevod
 import { useLanguage } from "../../Context/LanguageContext";
@@ -48,25 +52,25 @@ export const UslugePreview: React.FC = () => {
         </Link>
 
         <Link to="/usluge/decija" className="ikona-link" aria-label={t("Dečija i preventivna stomatologija", "Pediatric & preventive dentistry")}>
-          <div className="ikona" style={{ backgroundImage: `url(${orthodonticsImg})` }}>
+          <div className="ikona" style={{ backgroundImage: `url(${Decija})` }}>
             <p>{t("Dečija i preventivna stomatologija", "Pediatric & preventive dentistry")}</p>
           </div>
         </Link>
 
         <Link to="/usluge/implantologija" className="ikona-link" aria-label={t("Implantologija", "Implantology")}>
-          <div className="ikona" style={{ backgroundImage: `url(${prostheticsImg})` }}>
+          <div className="ikona" style={{ backgroundImage: `url(${implantologija})` }}>
             <p>{t("Implantologija", "Implantology")}</p>
           </div>
         </Link>
 
         <Link to="/usluge/estetski-tretmani" className="ikona-link" aria-label={t("Estetski tretmani", "Aesthetic treatments")}>
-          <div className="ikona" style={{ backgroundImage: `url(${restauracijaIcon})` }}>
+          <div className="ikona" style={{ backgroundImage: `url(${estetika})` }}>
             <p>{t("Estetski tretmani", "Aesthetic treatments")}</p>
           </div>
         </Link>
 
         <Link to="/usluge/dijagnostika" className="ikona-link" aria-label={t("Dijagnostika", "Diagnostics")}>
-          <div className="ikona" style={{ backgroundImage: `url(${surgeryImg})` }}>
+          <div className="ikona" style={{ backgroundImage: `url(${dijagnostika})` }}>
             <p>{t("Dijagnostika", "Diagnostics")}</p>
           </div>
         </Link>

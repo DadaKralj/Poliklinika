@@ -2,6 +2,7 @@
 import { HashLink } from 'react-router-hash-link';
 import React, { useState } from 'react';
 import './Navbar.css';
+import logoImg from '../pictures/LOGO.png';
 
 // ⬇️ Uvozimo globalni language context
 import { useLanguage } from "../Context/LanguageContext";
@@ -18,7 +19,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Poliklinika</div>
+      <div className="logo">
+        <img src={logoImg} alt="Poliklinika Papić Logo" className="logo-img" />
+      </div>
 
       {/* Burger dugme */}
       <div className="burger" onClick={() => setMenuOpen(!menuOpen)}>
@@ -36,11 +39,15 @@ const Navbar: React.FC = () => {
           {t('O nama', 'About us')}
         </HashLink>
 
+        <HashLink smooth to="/tim" className="nav-item" onClick={closeMenu}>
+          {t('Stručni tim', 'Our Team')}
+        </HashLink>
+
         <HashLink smooth to="/#usluge" className="nav-item" onClick={closeMenu}>
           {t('Usluge', 'Services')}
         </HashLink>
 
-        <HashLink smooth to="/#galerija" className="nav-item" onClick={closeMenu}>
+        <HashLink smooth to="/galerija" className="nav-item" onClick={closeMenu}>
           {t('Galerija', 'Gallery')}
         </HashLink>
 

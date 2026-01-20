@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Restaurativna.css";
-import restaurativnaSlika from "../../pictures/restaurativna stomatologija.png"; // prilagodi naziv ako je drugačiji
+import restaurativnaSlika from "../../pictures/rest.jpeg"; // prilagodi naziv ako je drugačiji
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Restaurativna: React.FC = () => {
@@ -18,7 +18,8 @@ const Restaurativna: React.FC = () => {
     <main className="rest-page">
       {/* HERO BLOK – RESTAURATIVNA STOMATOLOGIJA */}
       <section className="rest-hero">
-        <div className="rest-hero-text">
+        <div className="rest-hero-top">
+          <div className="rest-hero-text">
           <p className="rest-tag">
             {t("Restaurativna stomatologija i endodoncija", "Restorative dentistry & endodontics")}
           </p>
@@ -41,7 +42,17 @@ const Restaurativna: React.FC = () => {
               "The goal is to preserve as much healthy tooth tissue as possible and prevent further deterioration. After removing decay, the damaged area is restored with fillings made of modern aesthetic materials that mimic natural tooth color and shape."
             )}
           </p>
+          </div>
 
+          <div className="rest-hero-image">
+            <img
+              src={restaurativnaSlika}
+              alt={t("Restaurativna stomatologija i endodoncija", "Restorative dentistry & endodontics")}
+            />
+          </div>
+        </div>
+
+        <div className="rest-hero-bottom">
           <div className="rest-list-wrapper">
             <h2>{t("Kada je vreme za restaurativni tretman?", "When is it time for restorative treatment?")}</h2>
             <ul className="rest-list">
@@ -57,13 +68,6 @@ const Restaurativna: React.FC = () => {
               )}
             </p>
           </div>
-        </div>
-
-        <div className="rest-hero-image">
-          <img
-            src={restaurativnaSlika}
-            alt={t("Restaurativna stomatologija i endodoncija", "Restorative dentistry & endodontics")}
-          />
         </div>
       </section>
 

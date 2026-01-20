@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Dijagnostika.css";
-import dijagnostikaImg from "../../pictures/restaurativna stomatologija.png"; // Promeni na realnu sliku kada budeš imao
+import dijagnostikaImg from "../../pictures/dijagnostika1.jpg"; // Promeni na realnu sliku kada budeš imao
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Dijagnostika: React.FC = () => {
