@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Estetika.css";
-import estetskiImg from "../../pictures/est.jpeg"; // promeni sliku ako želiš
+import estetskiImg from "../../pictures/galerija/slika7.jpg"; // promeni sliku ako želiš
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Estetika: React.FC = () => {

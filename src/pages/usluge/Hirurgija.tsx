@@ -1,4 +1,4 @@
-import img from '../../pictures/hirurgija1.png';
+import img from '../../pictures/galerija/slika8.jpg';
 import React, { useEffect } from "react";
 import "./Hirurgija.css";
 import { useLanguage } from "../../Context/LanguageContext";

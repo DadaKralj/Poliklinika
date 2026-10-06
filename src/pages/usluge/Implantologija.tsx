@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Implantologija.css";
-import implantImg from "../../pictures/inani.jpeg"; // promeni po potrebi
+import implantImg from "../../pictures/galerija/slika10.jpg";
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Implantologija: React.FC = () => {

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import heroBg from "../../pictures/masa1.jpeg";
+import heroBgMobile from "../../pictures/masatelefon.jpg";
 
 // ⬇️ Global language context
 import { useLanguage } from "../../Context/LanguageContext";
@@ -16,8 +17,19 @@ const Hero: React.FC = () => {
     <section
       id="pocetna"
       className="hero-section"
-      style={{ backgroundImage: `url(${heroBg})` }}
     >
+      {/* Desktop slika */}
+      <div 
+        className="hero-bg hero-bg-desktop"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      
+      {/* Mobilna slika */}
+      <div 
+        className="hero-bg hero-bg-mobile"
+        style={{ backgroundImage: `url(${heroBgMobile})` }}
+      />
+
       <div className="hero-overlay" />
 
       <div className="hero-inner">

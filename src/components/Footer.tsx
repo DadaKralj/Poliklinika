@@ -40,14 +40,14 @@ const Footer: React.FC = () => {
               </HashLink>
             </li>
             <li>
-              <Link to="/usluge">
+              <HashLink smooth to="/#usluge">
                 {t("Usluge", "Services")}
-              </Link>
+              </HashLink>
             </li>
             <li>
-              <HashLink smooth to="/#galerija">
+              <Link to="/galerija">
                 {t("Galerija", "Gallery")}
-              </HashLink>
+              </Link>
             </li>
             <li>
               <HashLink smooth to="/#kontakt">
@@ -130,8 +130,8 @@ const Footer: React.FC = () => {
           {t("Sva prava zadržana", "All Rights Reserved")}
           <br />
           {t(
-            "Hosting i razvoj: Nikola Danilović i Luka Bukurov",
-            "Hosted & developed by Nikola Danilović and Luka Bukurov"
+            "Hosting i razvoj: Katarina Papić, Nikola Danilović i Luka Bukurov",
+            "Hosted & developed by Katarina Papić, Nikola Danilović and Luka Bukurov"
           )}
         </div>
 

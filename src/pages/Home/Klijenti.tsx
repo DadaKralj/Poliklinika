@@ -53,7 +53,7 @@ const Klijenti: React.FC = () => {
   const [animating, setAnimating] = useState(false);
   const [cardsVisible, setCardsVisible] = useState(2);
   const [stepPx, setStepPx] = useState<number | null>(null);
-  const [viewportWidth, setViewportWidth] = useState<number | null>(null);
+  //const [viewportWidth, setViewportWidth] = useState<number | null>(null);
 
   // Mjerenje kartice i viewport-a (samo kada se komponenta montira ili resize)
   useLayoutEffect(() => {
@@ -80,7 +80,7 @@ const Klijenti: React.FC = () => {
 
       setStepPx(newStep);
       setCardsVisible(newCardsVisible);
-      setViewportWidth(vpWidth);
+      //setViewportWidth(vpWidth);
     }
 
     // Malo čekanja da se DOM stabiliziraj

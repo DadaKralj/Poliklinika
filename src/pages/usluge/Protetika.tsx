@@ -1,7 +1,7 @@
 // src/pages/usluge/Protetika.tsx
 import React, { useEffect } from "react";
 import "./Protetika.css";
-import heroImg from "../../pictures/mimaProtetika.jpeg";
+import heroImg from "../../pictures/galerija/slika12.jpg";
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Protetika: React.FC = () => {

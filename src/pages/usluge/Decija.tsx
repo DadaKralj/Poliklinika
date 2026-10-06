@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Decija.css";
-import img from "../../pictures/decija.jpg";
+import img from "../../pictures/galerija/slika4.jpg";
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Decija: React.FC = () => {

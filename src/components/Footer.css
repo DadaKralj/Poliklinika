@@ -255,4 +255,10 @@
   .brand-title {
     text-align: center;
   }
+  
+  /* Na telefonu: dugme "Vratite se na početak" iznad copyright teksta */
+  .kontakt-bottom {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
 }

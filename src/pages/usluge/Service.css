@@ -73,7 +73,8 @@
 /* ========== Responsive za mobilne uređaje ========== */
 @media (max-width: 1024px) {
   .glavne-usluge {
-    padding: 40px 15px;
+    padding: 0px 15px;
+    margin-top: -60px;
   }
 
   .glavne-usluge h2 {

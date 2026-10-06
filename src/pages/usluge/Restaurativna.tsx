@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./Restaurativna.css";
-import restaurativnaSlika from "../../pictures/rest.jpeg"; // prilagodi naziv ako je drugačiji
+import restaurativnaSlika from "../../pictures/galerija/slika15.jpg"; // prilagodi naziv ako je drugačiji
 import { useLanguage } from "../../Context/LanguageContext";
 
 const Restaurativna: React.FC = () => {

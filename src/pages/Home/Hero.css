@@ -10,11 +10,23 @@
 
   min-height: 100vh;
   display: block;
+}
 
-  /* slika dolazi inline iz TSX-a; ovde ostavljamo samo pravila prikaza */
+/* Background slike za desktop i mobilni */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* Desktop - prikaži samo desktop sliku */
+.hero-bg-mobile {
+  display: none;
 }
 /* tamni overlay radi čitljivosti, kao na referentnom sajtu */
 .hero-section .hero-overlay {
@@ -101,4 +113,34 @@
 @media (max-width: 1024px) {
   .hero-inner { justify-content: center; text-align: center; }
   .hero-text { max-width: 90vw; }
+}
+
+/* Mobilni - prikaži samo mobilnu sliku */
+@media (max-width: 768px) {
+  .hero-bg-desktop {
+    display: none;
+  }
+  
+  .hero-bg-mobile {
+    display: block;
+    background-size: cover; /* cela slika, popunjava ekran */
+    background-position: center center;
+  }
+  
+.hero-inner {
+    padding-top: 80px; /* 👈 Povećaj ovaj broj da spustiš tekst još niže */ 
+  }
+
+  /* Overlay samo u sredini (bez gornjih 20% i donjih 20%) */
+  .hero-section .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 14.15%,           /* Gore 20% bez overlay-a */
+      rgba(0, 0, 0, 0.6) 14.15%,   /* Odavde počinje overlay */
+      rgba(0, 0, 0, 0.6) 85.7%,   /* Ovde se završava overlay */
+      transparent 80%,           /* Dole 20% bez overlay-a */
+      transparent 100%
+    );
+  }
 }

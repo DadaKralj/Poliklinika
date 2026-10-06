@@ -17,6 +17,13 @@ const Navbar: React.FC = () => {
   const t = (sr: string, en: string) => (language === 'sr' ? sr : en);
   const closeMenu = () => setMenuOpen(false);
 
+  // ⬇️ Custom scroll sa offsetom za mobilne uređaje
+  const scrollWithOffset = (el: HTMLElement) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = window.innerWidth <= 768 ? 300 : 80; // Više offseta na mobilnim
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -51,7 +58,13 @@ const Navbar: React.FC = () => {
           {t('Galerija', 'Gallery')}
         </HashLink>
 
-        <HashLink smooth to="/#kontakt" className="kontakt-dugme" onClick={closeMenu}>
+        <HashLink 
+          smooth 
+          to="/#kontakt" 
+          scroll={scrollWithOffset}
+          className="kontakt-dugme" 
+          onClick={closeMenu}
+        >
           {t('Kontakt', 'Contact')}
         </HashLink>
 
